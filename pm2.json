@@ -1,0 +1,14 @@
+{
+    "apps": [
+        {
+            "name": "todo-server@16100",
+            "script": "dist/index.js",
+            "args": [],
+            "env": {
+                "PORT": "16100",
+                "NODE_ENV": "production"
+            },
+            "instances": 1
+        }
+    ]
+}
