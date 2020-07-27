@@ -3,6 +3,7 @@ import session from 'koa-session'
 import koaBody from 'koa-body'
 import config from 'config'
 import routers from './routers'
+import mountMiddlewares from './middleware'
 
 const sessionConfig = {
     key: 'todo',
@@ -21,7 +22,10 @@ app.use(
     })
 )
 
-// 设置路由
+// 挂载中间件
+mountMiddlewares(app)
+
+// 挂载路由
 app.use(routers.routes()).use(routers.allowedMethods())
 
 // 设置端口监听
